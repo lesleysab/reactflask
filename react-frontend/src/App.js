@@ -3,6 +3,7 @@ import { render } from "react-dom";
 import Home from "./Home";
 import Form from "./Form";
 import Weather from "./Weather";
+import './index.css';
 
 
 
@@ -44,20 +45,34 @@ class App extends Component {
   };
   render() {
     return (
-      <div className="wrapper">
-        <Home />
-        <Form getWeather={this.getWeather} />
-        <Weather
-          temperature={this.state.temperature}
-          city={this.state.temperature}
-          country={this.state.country}
-          description={this.state.description}
-          error={this.state.error}
-        />
+
+      <div>
+        <div className="wrapper">
+          <div className="main">
+            <div className="container">
+              <div className="row">
+                <div className="col-xs-5 home-container">
+                  <Home />
+                </div>
+                <div className="col-xs-7 form-container">
+                  <Form getWeather={this.getWeather} />
+                  <Weather
+                    temperature={this.state.temperature}
+                    city={this.state.city}
+                    country={this.state.country}
+                    description={this.state.description}
+                    error={this.state.error}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
 }
 
 export default App;
+
 
