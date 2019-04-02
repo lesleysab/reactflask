@@ -5,6 +5,7 @@ import Form from "./Form";
 import Weather from "./Weather";
 
 
+
 const API_KEY = "52c22aabd27dfb2bbb026631979c4c29";
 
 class App extends Component {
@@ -20,7 +21,7 @@ class App extends Component {
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
     const api_call = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${API_KEY}`
+      `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${API_KEY}&units=imperial`
     );
     const data = await api_call.json();
 
@@ -43,7 +44,7 @@ class App extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="wrapper">
         <Home />
         <Form getWeather={this.getWeather} />
         <Weather
