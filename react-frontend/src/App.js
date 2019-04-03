@@ -51,7 +51,8 @@ class App extends Component {
           <div className="main">
             <div className="container">
               <div className="row">
-                <div className="col-xs-5 home-container">
+                <div className=" col-xs-5 home-container">
+
                   <Home />
                 </div>
                 <div className="col-xs-7 form-container">
