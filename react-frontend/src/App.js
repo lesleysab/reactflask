@@ -17,6 +17,10 @@ class App extends Component {
     description: undefined
   };
 
+  resetForm = () => {
+    document.getElementById("weatherForm").reset();
+  }
+
   getWeather = async e => {
     e.preventDefault();
     const city = e.target.elements.city.value;
@@ -33,6 +37,7 @@ class App extends Component {
         country: data.sys.country,
         description: data.weather[0].description
       });
+
     } else {
       this.setState({
         temperature: undefined,
@@ -42,6 +47,7 @@ class App extends Component {
         error: "Please enter the correct city and country"
       });
     }
+    this.resetForm()
   };
   render() {
     return (
